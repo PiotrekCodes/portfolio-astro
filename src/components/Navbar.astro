@@ -5,27 +5,22 @@
   <nav>
     <a class="logo" href="/">Piotr Krawczyk</a>
     <ul class="menu">
-      <li><a href="">About</a></li>
-      <li><a href="">Projects</a></li>
-      <li><a href="">Contact Me</a></li>
+      <li><a class="menu-item" href="#projects">Projects</a></li>
+      <li><a class="menu-item" href="">Skills</a></li>
+      <li><a class="menu-item" href="">Contact Me</a></li>
       <li class="resume-btn"><a href="">Resume</a></li>
     </ul>
   </nav>
 </div>
 
 <style>
-  .container {
-    max-width: 850px;
-    margin: 0 auto;
-  }
-
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: solid 2px black;
     box-shadow: black 4px 4px;
-    background-color: white;
+    background-color: #f4f4f4;
     padding: 2rem;
     margin: 2rem 0;
   }
@@ -39,14 +34,13 @@
     align-items: center;
   }
 
-  a {
-    text-decoration: none;
-    color: #202129;
-  }
-
   li {
     list-style: none;
     margin-right: 10px;
+  }
+
+  .menu-item:hover {
+    border-bottom: 2px solid #ebcfc4;
   }
 
   .resume-btn {
@@ -54,5 +48,11 @@
     border-radius: 5px;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    // Add transition to make it smoother
+    transition: all 0.2s ease-in-out;
+  }
+
+  .resume-btn:hover {
+    background-color: #ebcfc4;
   }
 </style>

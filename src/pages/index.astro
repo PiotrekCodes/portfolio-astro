@@ -1,10 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import About from '../components/About.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import data from '../assets/data.js';
 ---
 
 <Layout title="Piotr Krawczyk | Web Development.">
   <Navbar />
+  <h1 class="projects-hero">About</h1>
+  <About />
+  <h1 class="projects-hero">Projects</h1>
+  <div class="projects-grid">
+    {
+      data.map(project => (
+        <ProjectCard
+          name={project.name}
+          url={project.url}
+          github={project.github}
+          description={project.description}
+        />
+      ))
+    }
+  </div>
 </Layout>
 
-<style></style>
+<style>
+  .projects-hero {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+
+  .projects-grid {
+    margin: 0 auto;
+    max-width: 850px;
+    display: flex;
+    gap: 2rem;
+  }
+</style>

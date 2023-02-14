@@ -1,0 +1,32 @@
+---
+export interface Props {
+  name: string; // name of the project
+  url: string; // url to the project
+  github: string; // url to the github repo
+  description: string; // description of the project
+}
+
+const { name, url, github, description } = Astro.props;
+---
+
+<section id="#projects" class="container">
+  <div class="card">
+    <h1><a href={url}>{name}</a></h1>
+    <p>{description}</p>
+    <a href={github}>Github</a>
+  </div>
+</section>
+
+<style>
+  .card {
+    max-width: 400px;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border: 2px solid black;
+    box-shadow: black 4px 4px;
+  }
+
+  a:hover {
+    border-bottom: 2px solid black;
+  }
+</style>
