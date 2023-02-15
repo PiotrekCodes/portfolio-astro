@@ -47,12 +47,9 @@ const { title } = Astro.props;
       rgba(91, 143, 185, 1) 22%,
       rgba(182, 234, 218, 1) 71%
     );
-    /* background-color: #b6eada; */
-    /* background-color: #ebcfc4; */
     color: #03001c;
     line-height: 1.25;
     font-size: 18px;
-    /* background-image: url('../assets/wavecut.png'); */
   }
   .container {
     max-width: 900px;
@@ -66,5 +63,12 @@ const { title } = Astro.props;
 
   ul {
     list-style: none;
+  }
+
+  // on mobiles containers should be full width
+  @media (max-width: 600px) {
+    .container {
+      padding: 0 1rem;
+    }
   }
 </style>
