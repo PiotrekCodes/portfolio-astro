@@ -4,16 +4,21 @@ export interface Props {
   url: string; // url to the project
   github: string; // url to the github repo
   description: string; // description of the project
+  technologies: string[]; // technologies used in the project
 }
 
-const { name, url, github, description } = Astro.props;
+const { name, url, github, description, technologies } = Astro.props;
 ---
 
 <section id="#projects" class="container">
   <div class="card">
+    <div class="card-top">
+      <a href={github}>Github <i class="fa-brands fa-github"></i></a>
+      <a href={url}>Live <i class="fa-solid fa-up-right-from-square"></i></a>
+    </div>
     <h1><a href={url}>{name}</a></h1>
     <p>{description}</p>
-    <a href={github}>Github</a>
+    <div class="card-bottom">{technologies}</div>
   </div>
 </section>
 
@@ -26,7 +31,18 @@ const { name, url, github, description } = Astro.props;
     box-shadow: black 4px 4px;
   }
 
+  .card-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .card-bottom {
+    font-size: 14px;
+  }
+
   a:hover {
-    border-bottom: 2px solid black;
+    color: #b6eada;
   }
 </style>

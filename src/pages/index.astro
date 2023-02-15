@@ -6,36 +6,50 @@ import ProjectCard from '../components/ProjectCard.astro';
 import data from '../assets/data.js';
 ---
 
-<Layout title="Piotr Krawczyk | Web Development.">
+<Layout title="Piotr Krawczyk | Web Development">
   <Navbar />
-  <h1 class="projects-hero">About</h1>
+  <div class="hero"><h1 class="projects-hero">About</h1></div>
   <About />
-  <h1 class="projects-hero">Projects</h1>
+  <div id="projects" class="hero"><h1 class="projects-hero">Projects</h1></div>
   <div class="projects-grid">
     {
       data.map(project => (
-        <ProjectCard
-          name={project.name}
-          url={project.url}
-          github={project.github}
-          description={project.description}
-        />
+        <div class="project-card">
+          <ProjectCard
+            name={project.name}
+            url={project.url}
+            github={project.github}
+            description={project.description}
+            technologies={project.technologies}
+          />
+        </div>
       ))
     }
   </div>
+  <div class="hero"><h1 class="projects-hero">Skills</h1></div>
 </Layout>
 
 <style>
+  .hero {
+    text-align: center;
+  }
   .projects-hero {
     text-align: center;
-    margin-top: 2rem;
     font-size: 2rem;
+    display: inline-block;
+    margin: 0 auto;
+    border-bottom: 4px dotted black;
+  }
+
+  .project-card {
+    margin-bottom: 1.5rem;
   }
 
   .projects-grid {
-    margin: 0 auto;
+    margin: 2rem auto;
     max-width: 850px;
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
   }
 </style>
