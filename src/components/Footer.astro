@@ -1,0 +1,35 @@
+---
+---
+
+<footer>
+  <p>
+    &copy; <span id="copyright"></span> Piotrek Codes | Built with <a
+      class="footer-link"
+      href="https://astro.build">Astro</a
+    >
+  </p>
+</footer>
+
+<script>
+  document.querySelector('#copyright').textContent = new Date()
+    .getFullYear()
+    .toString();
+</script>
+
+<style>
+  footer {
+    text-align: center;
+    border-top: 2px solid #03001c;
+    font-size: 1rem;
+  }
+
+  .footer-link {
+    color: #03001c;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+</style>

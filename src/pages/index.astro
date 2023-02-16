@@ -5,11 +5,12 @@ import About from '../components/About.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Skills from '../components/Skills.astro';
 import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 import data from '../assets/data.js';
 ---
 
 <Layout title="Piotr Krawczyk | Web Development">
-  <div class="nav"><Navbar /></div>
+  <Navbar />
   <div class="hero"><h1 class="projects-hero">About</h1></div>
   <About />
   <div id="projects" class="hero"><h1 class="projects-hero">Projects</h1></div>
@@ -32,6 +33,7 @@ import data from '../assets/data.js';
   <Skills />
   <div class="hero"><h1 class="projects-hero">Get In Touch</h1></div>
   <Contact />
+  <Footer />
 </Layout>
 
 <style>
@@ -56,5 +58,26 @@ import data from '../assets/data.js';
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    body {
+      padding: 1rem 1rem;
+    }
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .project-card {
+      margin-bottom: 1rem;
+    }
+
+    .projects-hero {
+      font-size: 1.5rem;
+    }
+
+    .hero {
+      margin-top: 1rem;
+    }
   }
 </style>
