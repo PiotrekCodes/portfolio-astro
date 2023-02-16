@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPost from '../components/BlogPost.astro';
+const allPosts = await Astro.glob('../pages/posts/*.md');
+---
+
+<Layout title="Piotr Krawczyk | Blog">
+  <h1>Blog page</h1>
+  <ul>
+    {
+      allPosts.map(post => (
+        <BlogPost url={post.url} title={post.frontmatter.title} />
+      ))
+    }
+  </ul>
+</Layout>
+
+<style></style>
