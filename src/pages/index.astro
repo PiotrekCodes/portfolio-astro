@@ -3,12 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import About from '../components/About.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import Skills from '../components/Skills.astro';
 import Contact from '../components/Contact.astro';
 import data from '../assets/data.js';
 ---
 
 <Layout title="Piotr Krawczyk | Web Development">
-  <Navbar />
+  <div class="nav"><Navbar /></div>
   <div class="hero"><h1 class="projects-hero">About</h1></div>
   <About />
   <div id="projects" class="hero"><h1 class="projects-hero">Projects</h1></div>
@@ -28,6 +29,7 @@ import data from '../assets/data.js';
     }
   </div>
   <div class="hero"><h1 class="projects-hero">Skills</h1></div>
+  <Skills />
   <div class="hero"><h1 class="projects-hero">Get In Touch</h1></div>
   <Contact />
 </Layout>
