@@ -11,6 +11,8 @@
 </footer>
 
 <script>
+  // typescript doesn't like this, but it works
+  // @ts-ignore
   document.querySelector('#copyright').textContent = new Date()
     .getFullYear()
     .toString();
