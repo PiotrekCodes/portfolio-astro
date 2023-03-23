@@ -23,13 +23,21 @@ const data = [
       'Note taking app built with React and connected to Supabase to store all the notes. User is able to add, edit or delete the notes.',
     technologies: ['React, Supabase'],
   },
+  // {
+  //   name: 'Portfolio',
+  //   url: 'https://www.piotrek.codes',
+  //   github: 'https://github.com/PiotrekCodes/portfolio-astro',
+  //   description:
+  //     'This portfolio website, built with Astro framework for the blazing fast speed it offers. Styled with vanilla CSS.',
+  //   technologies: ['Astro, CSS'],
+  // },
   {
-    name: 'Portfolio',
-    url: 'https://www.piotrek.codes',
-    github: 'https://github.com/PiotrekCodes/portfolio-astro',
+    name: 'Opryszek Detection App',
+    url: 'https://github.com/PiotrekCodes/Opryszek-Detection-App',
+    github: 'https://github.com/PiotrekCodes/Opryszek-Detection-App',
     description:
-      'This portfolio website, built with Astro framework for the blazing fast speed it offers. Styled with vanilla CSS.',
-    technologies: ['Astro, CSS'],
+      'Python app that detects hte new object in the webcam, takes a picture and sends it to the user via email or telegram bot.',
+    technologies: ['Python, OpenCV'],
   },
 ];
 

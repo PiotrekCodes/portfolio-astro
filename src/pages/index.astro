@@ -10,13 +10,12 @@ import data from '../assets/data.js';
 ---
 
 <Layout title="Piotr Krawczyk | Web Development">
-  <Navbar />
   <div class="hero"><h1 class="projects-hero">About</h1></div>
   <About />
   <div id="projects" class="hero"><h1 class="projects-hero">Projects</h1></div>
   <div class="projects-grid">
     {
-      data.map(project => (
+      data.map((project) => (
         <div class="project-card">
           <ProjectCard
             name={project.name}
@@ -33,7 +32,6 @@ import data from '../assets/data.js';
   <Skills />
   <div class="hero"><h1 class="projects-hero">Get In Touch</h1></div>
   <Contact />
-  <Footer />
 </Layout>
 
 <style>

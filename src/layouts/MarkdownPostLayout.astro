@@ -4,6 +4,13 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={`Piotr Krawczyk | ${frontmatter.title}`}>
-  <p>Written by {frontmatter.author}</p>
   <slot />
 </Layout>
+
+<style>
+  html {
+    height: 100%;
+  }
+
+  
+</style>

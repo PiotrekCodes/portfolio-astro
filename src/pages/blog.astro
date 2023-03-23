@@ -5,14 +5,40 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
 <Layout title="Piotr Krawczyk | Blog">
-  <h1>Blog page</h1>
-  <ul>
+  <div class="hero"><h1 class="projects-hero">Blog Page</h1></div>
+
+  <div class="blogs-grid">
     {
-      allPosts.map(post => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+      allPosts.map((post) => (
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          img={post.frontmatter.img}
+        />
       ))
     }
-  </ul>
+  </div>
 </Layout>
 
-<style></style>
+<style>
+  .hero {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .projects-hero {
+    text-align: center;
+    font-size: 2rem;
+    display: inline-block;
+    margin: 0 auto;
+    border-bottom: 4px dotted black;
+  }
+
+  .blogs-grid {
+    margin: 2rem auto;
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+  }
+</style>
