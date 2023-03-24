@@ -53,4 +53,16 @@ const { title, url, description, img } = Astro.props;
   .col-img {
     margin-left: 10px;
   }
+
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+
+    .col-img {
+      margin-left: 0;
+      height: 200px;
+      object-fit: contain;
+    }
+  }
 </style>
